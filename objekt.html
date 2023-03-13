@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objekter</title>
+
+    <style>
+        #boks1{
+            float: left;
+            border-style: solid;
+            border-color: green;
+            border-width: 2px;
+        }
+        #boks2{
+            margin: auto;
+            width:250px;
+            border-style: solid;
+            border-color: green;
+            border-width: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!--<h1>Skriv inn atomnummer og finn fakta om atomet!</h1>
+    Atomnummer:<input type="text" name="" id="nr">
+    <button onclick="run()">Søk</button> <br>
+    <p id="output"></p>
+
+    <h1>Promillekaklulator:</h1>
+    Kjønn? <input type="checkbox" id="mann" value="Mann" onclick="kjonn()">Mann
+    <input type="checkbox" id="dame" value="Dame" onclick="kjonn()">Dame<br>
+    Drikkens alkohol prosent:<input type="text" name="" id="prosent"><br>
+    Antall dL:<input type="text" name="" id="volum"><br>
+    Mengde:<input type="text" name="" id="mengde"><br>
+    Kroppsvekt:<input type="text" name="" id="kroppsvekt"><br>
+    Mellomrom fra du begynte å drikke->sluttet å drikke (minutter):<input type="text" name="" id="tid"><br>
+    <button onclick="beregn()">Beregn</button> <br>
+    <p id="output2"></p>
+    <br>-->
+
+    <h1><u>Skriv inn teller og nevner i de to brøkene:</u></h1>
+
+    <div id="boks1">
+    Teller:<input type="number" name="" id="teller1" value="4" ><br>
+    Nevner:<input type="number" name="" id="nevner1" value="4"><br>
+    </div>
+
+    <div id="boks2">
+        Teller:<input type="number" name="" id="teller2" value="3"><br>
+        Nevner:<input type="number" name="" id="nevner2" value="3"><br>
+        </div>
+        <button onclick="addisjonBrok()">Adder brøkene</button>
+        <p id="addisjonsUtskrift"></p>
+
+        <button onclick="subtraksjonBrok()">subtraher brøkene</button>
+        <p id="subtraksjonsUtskrift"></p>
+
+        <button onclick="multiplikasjonBrok()">Multipliser brøkene</button>
+        <p id="multiplikasjonsUtskrift"></p>
+
+        <button onclick="divideringBrok()">divider brøkene</button>
+        <p id="divideringsUtskrift"></p>
+
+    
+        
+    
+
+
+    
+    <script>
+                        this.teller1 = document.getElementById("teller1");
+                        this.nevner1 = document.getElementById("nevner1");
+                        this.teller2 = document.getElementById("teller2");
+                        this.nevner2 = document.getElementById("nevner2");
+
+                class Brok{
+                    constructor(teller1,nevner1,teller2,nevner2){
+                        this.teller1 = teller1;
+                        this.nevner1 = nevner1;
+                        this.teller2 = teller2;
+                        this.nevner2 = nevner2;
+                    }
+                    
+                    adder(){
+                        
+                        let addisjon = (this.teller1/this.nevner1) + (this.teller2/this.nevner2);
+                        console.log(addisjon)
+                        document.getElementById("addisjonsUtskrift").innerHTML = "summen av de to brøkene er: " + parseFloat(addisjon).toFixed(2);
+                    }
+
+                    subtraher(){
+                        
+                        let subtraksjon = (this.teller1/this.nevner1) - (this.teller2/this.nevner2);
+                        console.log(subtraksjon)
+                        document.getElementById("subtraksjonsUtskrift").innerHTML = "differansen av de to brøkene er: " + parseFloat(subtraksjon).toFixed(2);
+                    }
+
+                    multipliser(){
+                        
+                        let multiplikasjon = (this.teller1/this.nevner1) * (this.teller2/this.nevner2);
+                        console.log(multiplikasjon)
+                        document.getElementById("multiplikasjonsUtskrift").innerHTML = "produktet av de to brøkene er: " + parseFloat(multiplikasjon).toFixed(2);
+                    }
+
+                    divider(){
+                        
+                        let dividering = (this.teller1/this.nevner1) / (this.teller2/this.nevner2);
+                        console.log(dividering)
+                        document.getElementById("divideringsUtskrift").innerHTML = "kvotienten av de to brøkene er: " + parseFloat(dividering).toFixed(2);
+                    }
+                }
+
+                function addisjonBrok(){
+               let addering =  new Brok (parseInt(document.getElementById("teller1").value),parseInt(document.getElementById("nevner1").value),
+               parseInt(document.getElementById("teller2").value),parseInt(document.getElementById("nevner2").value));
+                    addering.adder();
+                    console.log(addering);
+                
+                }
+
+                function subtraksjonBrok(){
+               let subtrahering =  new Brok (parseInt(document.getElementById("teller1").value),parseInt(document.getElementById("nevner1").value),
+               parseInt(document.getElementById("teller2").value),parseInt(document.getElementById("nevner2").value));
+                    subtrahering.subtraher();
+                    console.log(subtrahering);
+                
+                }
+                
+
+                function multiplikasjonBrok(){
+               let multiplisering =  new Brok (parseInt(document.getElementById("teller1").value),parseInt(document.getElementById("nevner1").value),
+               parseInt(document.getElementById("teller2").value),parseInt(document.getElementById("nevner2").value));
+                    multiplisering.multipliser();
+                    console.log(multiplisering);
+                
+                }
+
+                function divideringBrok(){
+               let divideringen =  new Brok (parseInt(document.getElementById("teller1").value),parseInt(document.getElementById("nevner1").value),
+               parseInt(document.getElementById("teller2").value),parseInt(document.getElementById("nevner2").value));
+                    divideringen.divider();
+                    console.log(divideringen);
+                
+                }
+
+                
+                
+                
+                
+                
+               /* function kjonn(){
+                if("mann"==true){
+                    r=0.68;
+                }else{
+                    r=0.55;
+                }
+                } 
+
+            class Promillekaklulator{
+                
+                  
+                
+            
+                constructor(prosent,volum,mengde,gender,vekt,minutter){
+                    this.prosent = document.getElementById("prosent");
+                    this.volum = document.getElementById("volum");
+                    this.mengde= document.getElementById("mengde");
+                    this.gender = r;
+                    this.vekt = document.getElementById("kroppsvekt");
+                    this.minutter = document.getElementById("tid");
+                    
+                }
+
+                 
+            }
+
+            function beregn() {
+                     a = this.volum*this.mengde*this.prosent;
+                     promille= (a*0.8)/this.gender*this.vekt;
+                     document.getElementById("output2").innerHTML = promille;
+                    
+                }
+
+           function run(){
+                atomArray[document.getElementById("nr").value-1].skrivUtAtom();
+                
+           }
+            class Atom{
+            constructor(navn,symbol,nummer,tilstand){
+                this.navn = navn;
+                this.symbol = symbol;
+                this.nummer = nummer;
+                this.tilstand = tilstand;
+            }
+
+            skrivUtAtom(){
+                document.getElementById("output").innerHTML = "Atomnavn: "+ this.navn + "<br>" + "Atomnummer: " + this.nummer
+                + "<br>" + "Symbol: "+ this.symbol + "<br>" + "Tilstand ved 25 grader celsius: "+this.tilstand;
+            }
+            
+        }
+
+        let atomArray = [new Atom("Hydrogen","H",1,"fast"),new Atom("Helium","He",2,"væske"),
+        new Atom("Litium","Li",3,"fast"),new Atom("Beryllium","Be",4,"fast"),new Atom("Bor","B",5,"fast")];
+
+        let atom1 = new Atom("Hydrogen","H",1,"fast");
+        let atom2 = new Atom("Helium","He",2,"væske");
+        let atom3 = new Atom("Litium","Li",3,"fast");
+        let atom4 = new Atom("Beryllium","Be",4,"fast");
+        let atom5 = new Atom("Bor","B",5,"fast");
+        document.getElementById.innerHTML = ("atomNavn","atonNummer","atomSymbol","atomTilstand");
+
+
+        const person = {
+            firstName:"Elias",
+            lastName:"Nagle",
+            age:18,
+            height:195,
+            fatherOf:"Erling Sannes og Mattias Strand",
+
+            fullName:function () {
+                return this.firstName + " "+ this.lastName;
+                
+            }
+        };
+
+        console.log(person);
+
+        const bil ={
+            brand:"Lamborghini",
+            model:"Urus",
+            carDate:2017,
+            horsePower:657,
+            engine:"V8",
+            seats:5,
+            topSpeed:"305 km/h",
+            owner:"Elias G. Nagle",
+            registration:"DN 49531",
+            price:"3 700 000kr",
+
+            bilInfo:function(){
+                return this.brand +" "+ this.model + "." + "Eier:" + this.owner;
+            }
+        }
+
+        class Bil {
+            constructor(brand, model, carDate){
+                this.brand= brand;
+                this.model=model;
+                this.carDate=carDate;
+            }
+
+            bilInfo(){
+                return this.brand +" "+ this.model + this.carDate;
+            }
+
+            bilAlder(){
+                let date = new Date();
+                let year = date.getFullYear();
+                return year-this.carDate;
+            }
+        }
+
+        let bilArray = [new Bil("Mini","Cooper",2018),new Bil ("Toyota","Yaris",2017)];
+
+        let bil1 = new Bil("Mini","Cooper",2019);
+        let bil2 = new Bil ("Toyota","Yaris",2017);
+
+        
+
+        class Prisme{
+            constructor(length,width,height){
+                this.width = width;
+                this.height = height;
+                this.length = length;
+            }
+            volum(){
+                let volum = this.length * this.width * this.height;
+                return volum;
+            }
+            areal(){
+                let areal = (this.length*this.width)*2 + (this.length*this.height)*2 + (this.width*this.height)*2;
+                return areal;
+            }
+        }
+
+        let prisme1 = new Prisme(8,5,10);
+        let prisme2 = new Prisme(10,6,10);
+        let prisme3 = new Prisme(8,8,10);*/
+
+        
+
+
+        
+        
+
+    </script>
+
+
+
+</body>
+</html>

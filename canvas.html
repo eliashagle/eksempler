@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+
+        canvas{
+            background-color:green;
+        }
+
+
+    </style>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    
+
+<canvas id="can" width="600px" height="600px"></canvas>
+
+
+<script>
+    let canvasEl = document.querySelector("#can");
+    const avstand = 70;
+    console.log(canvasEl);
+    let ctx = canvasEl.getContext("2d");
+    ctx.moveTo(0,0);
+    
+    let liste=[3,5,8,2];
+    let liste2 = [1,2,1,6,7,3];
+    function tegnLinje (liste,color){
+        ctx.beginPath();
+        for (let i = 0; i < liste.length; i++) {
+                ctx.strokeStyle=color;
+                ctx.lineTo(i*avstand,liste[i]*40+100);
+                
+                ctx.stroke();
+            
+        }
+        ctx.closePath();
+        tegnLinje(liste,"red");
+        tegnLinje(liste2,"blue");
+
+    }
+
+
+</script>
+
+</body>
+</html>

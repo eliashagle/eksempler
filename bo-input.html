@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bo-input.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+<div id="boks">
+    <u><h1>Bestill din tur til Bø:</h1></u>
+    <h2>Navn:</h2>
+    <input type="text" id="gjestNavn">
+
+    <h2>Telefonnummer:</h2>
+    <input type="text" id="gjestNummer">
+
+    <h2>antall gjester</h2>
+    <select name="antall gjester:" id="gjesterAntall">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </select>
+    <h2>Skal det være inkludert frokost?Frokost koster 200kr ekstra.</h2>
+    <input type="radio" name="valg" id="frokostNei" checked>Ja<br>
+    <input type="radio" name="valg" id="frokostNei" >Nei<br>
+
+    <h2>ekstraaktiviter</h2>
+    <input type="checkbox" value="dagpass">Dagpass til Bø sommerland (300 kr) <br>
+    <input type="checkbox" value="dagpass2">Dagpass til Høyt og Lavt klatrepark (250 kr) <br>
+    <input type="checkbox" value="omvisning">Omvisning på fruktgård (200 kr) <br>
+    <input type="checkbox" value="dagstur">Dagstur på telemarkskanalen (800 kr) <br>
+        <br>
+    <button id="knapp">Registrer bestilling</button>
+
+    <p id="resultat"></p>
+</div>
+
+<script>
+
+    let navnEl=document.querySelector("#gjestNavn");
+    let nummerEl=document.querySelector("#gjestNummer");
+    let knappEl=document.querySelector("#knapp");
+    let resultatEl=document.querySelector("#resultat");
+    let gjesterEl=document.querySelector("#gjesterAntall");
+    let frokostJaEl=document.querySelector("#frokostJa");
+    let frokostNeiEl=document.querySelector("#frokostNei");
+
+
+    
+    knappEl.addEventListener("click",utskrift)
+
+    function utskrift() {
+        let nummer=nummerEl.value;
+        let navn=navnEl.value;
+        let gjester=gjesterEl.value;
+
+        if (frokost)
+
+        resultatEl.innerHTML="Din bestilling har blitt registrert på navnet "+navn+ " og telefonnummeret "+nummer+
+        ". Du har registrert "+gjester+" gjester på din bestlling.";
+
+    }
+
+
+</script>
+
+</body>
+</html>
